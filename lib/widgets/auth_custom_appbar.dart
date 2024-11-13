@@ -19,6 +19,17 @@ class AuthCustomApppBar extends StatelessWidget {
             ),
           ),
         ),
+
+        Positioned(
+          top: 57,
+          left: 0,
+          right: 0,
+          child: SizedBox(
+            width: 75,
+            height: 90,
+            child: Image.asset('assets/images/Frame.png'),
+          ),
+        ),
         if (icon != null)
           Positioned(
             top: 57,
@@ -50,16 +61,6 @@ class AuthCustomApppBar extends StatelessWidget {
               ),
             ),
           ),
-        Positioned(
-          top: 57,
-          left: 0,
-          right: 0,
-          child: SizedBox(
-            width: 75,
-            height: 90,
-            child: Image.asset('assets/images/Frame.png'),
-          ),
-        ),
       ],
     );
   }

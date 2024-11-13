@@ -1,36 +1,42 @@
 import 'package:flutter/material.dart';
 
 import '../configuration/theme.dart';
+import 'package:flutter/material.dart';
+import '../configuration/theme.dart';
+
 class ProfileHeader extends StatelessWidget {
-  const ProfileHeader({Key? key}) : super(key: key);
+  final String username;
+  final String email;
+
+  const ProfileHeader({Key? key, required this.username, required this.email}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return  Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Container(
-          width: 44,
-          height: 44,
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            image: DecorationImage(
-              image: AssetImage('assets/images/profile.png'),
-              fit: BoxFit.cover,
-            ),)),
-
-        const SizedBox(width:16 ,),
-        const Column(
+        CircleAvatar(
+          radius: 25,
+          backgroundColor: App_theme.primary,
+          child: Center(
+            child: Text(
+              username[0],
+              style: const TextStyle(fontSize:25, color: App_theme.backgroundwhite),
+            ),
+          ),
+        ),
+        const SizedBox(width: 16),
+        Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Mohammed Ali',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              username,
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
             ),
-            SizedBox(height: 4),
+            const SizedBox(height: 4),
             Text(
-              'Mohamed@example.com',
-              style: TextStyle(fontSize: 14, color: App_theme.hinttextcolor),
+              email,
+              style: const TextStyle(fontSize: 14, color: App_theme.hinttextcolor),
             ),
           ],
         ),

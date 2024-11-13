@@ -1,13 +1,17 @@
-abstract class AppEvent{}
-class SingupEvent extends AppEvent{
-  final String username;
-  final String email;
-  final String password;
-  final int  phonenumber;
+import '../../models/user_data.dart';
 
+abstract class AppEvent {}
 
+class SignupEvent extends AppEvent {
+  final UserData userData;
 
-  SingupEvent({required this.email, required this.phonenumber, required this.username, required this.password,});
+  SignupEvent({required this.userData});
 }
-class ClickEvent extends AppEvent{}
-class SaveEvent extends AppEvent{}
+
+class ClickEvent extends AppEvent {}
+
+class SaveEvent extends AppEvent {}
+
+class CancelSignupEvent extends AppEvent {}
+
+class ResetSignupEvent extends AppEvent {}

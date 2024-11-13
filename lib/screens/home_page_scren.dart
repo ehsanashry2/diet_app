@@ -118,7 +118,7 @@ class HomePage extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     SizedBox(
-                      width: 131,
+                      width: 140,
                       height: 37,
                       child: ElevatedButton(
                         onPressed: () {},

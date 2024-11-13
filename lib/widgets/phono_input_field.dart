@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:flutter/services.dart';
 
 class PhoneInputField extends StatelessWidget {
   final bool isError;
-  final TextInputType keyboardType;
-  const PhoneInputField({super.key, this.isError = false, required this.keyboardType, required TextEditingController controller});
+  final TextEditingController controller;
+
+  const PhoneInputField({
+    super.key,
+    this.isError = false,
+    required this.controller,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +25,22 @@ class PhoneInputField extends StatelessWidget {
             color: isError ? Colors.red : const Color(0xffBFBFBF),
           ),
         ),
-        child: IntlPhoneField(
-          decoration: const InputDecoration(
+        child: TextField(
+          controller: controller,
+          keyboardType: TextInputType.phone, // تعيين لوحة المفاتيح للأرقام فقط
+          inputFormatters: [
+            FilteringTextInputFormatter.digitsOnly, // السماح فقط بالأرقام
+            LengthLimitingTextInputFormatter(15), // تحديد الحد الأقصى لعدد الأحرف (مثلاً 15 رقمًا)
+          ],
+          decoration: InputDecoration(
+            hintText: 'Enter phone number',
             border: InputBorder.none,
-            contentPadding: EdgeInsets.symmetric(vertical: 14, horizontal: 16),
-            hintStyle: TextStyle(color: Color(0xffBFBFBF)),
+            contentPadding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+            hintStyle: const TextStyle(color: Color(0xffBFBFBF)),
+            errorText: isError ? "رقم الهاتف غير صحيح" : null, // يمكن تعديل الرسالة هنا
           ),
-          initialCountryCode: 'EG',
-          onChanged: (phone) {
+          onChanged: (text) {
+            // التحقق من طول الرقم سيتم في مكان آخر الآن.
           },
         ),
       ),

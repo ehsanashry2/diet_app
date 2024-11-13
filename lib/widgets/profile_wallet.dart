@@ -14,7 +14,7 @@ class ProfileWallet extends StatelessWidget {
       children: [
         Container(
           width: double.infinity,
-          height: 114,
+          height: 119,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             image: const DecorationImage(
