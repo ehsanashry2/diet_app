@@ -8,8 +8,6 @@ class SingUpForFields extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<SignupBloc>(context);
-
-
     return Form(
       key: bloc.formKey,
       child: Column(

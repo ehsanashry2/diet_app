@@ -45,7 +45,7 @@ class ProfilePage extends StatelessWidget {
                       const SizedBox(height: 24),
                       ProfileHeader(username: state.username, email: state.email),
                       const SizedBox(height: 24),
-                      ProfileWallet(),
+                      const ProfileWallet(),
                       const SizedBox(height: 32),
                       ProfileDesign(items: items),
                     ],
