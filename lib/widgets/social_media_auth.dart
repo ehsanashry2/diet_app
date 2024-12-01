@@ -16,7 +16,7 @@ class SocialMediaAuth extends StatelessWidget {
                 height: 56,
                 padding: const EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
-                  color: const Color(0xff3B5998).withOpacity(0.10),
+                  color: const Color(0xff7D16FF).withOpacity(0.10),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Row(
@@ -32,7 +32,7 @@ class SocialMediaAuth extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
-                        color: Color(0xff3B5998),
+                        color:App_theme.primary,
                       ),
                     ),
                   ],
@@ -45,7 +45,7 @@ class SocialMediaAuth extends StatelessWidget {
                 height: 56,
                 padding: const EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
-                  color: const Color(0xff31AA52).withOpacity(0.10),
+                  color: const Color(0xff7D16FF).withOpacity(0.10),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Row(
@@ -61,7 +61,7 @@ class SocialMediaAuth extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
-                        color: Color(0xff31AA52),
+                        color:App_theme.primary,
                       ),
                     ),
                   ],

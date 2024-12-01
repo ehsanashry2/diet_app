@@ -34,7 +34,7 @@ class VoucherTextField extends StatelessWidget {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
             borderSide: BorderSide(
-              color: isError ? App_theme.error:  App_theme.bordercolor,
+              color: isError ? App_theme.error : App_theme.bordercolor,
             ),
           ),
           enabledBorder: OutlineInputBorder(
@@ -46,7 +46,7 @@ class VoucherTextField extends StatelessWidget {
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
             borderSide: BorderSide(
-              color: isError ? Colors.red : const Color(0xff187D44),
+              color: isError ? App_theme.error : App_theme.primary, // هنا يتم استخدام اللون البرايمري عند التركيز
             ),
           ),
           errorBorder: OutlineInputBorder(
@@ -57,13 +57,13 @@ class VoucherTextField extends StatelessWidget {
           ),
           prefixIcon: prefixIconPath != null
               ? Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SvgPicture.asset(
-                    prefixIconPath!,
-                    width: 24,
-                    height: 24,
-                  ),
-                )
+            padding: const EdgeInsets.all(8.0),
+            child: SvgPicture.asset(
+              prefixIconPath!,
+              width: 24,
+              height: 24,
+            ),
+          )
               : null,
           suffixIcon: suffixIcon,
         ),

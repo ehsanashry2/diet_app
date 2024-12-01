@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import '../configuration/theme.dart';
 
 class SelectDeliveryCard extends StatelessWidget {
@@ -27,10 +26,7 @@ class SelectDeliveryCard extends StatelessWidget {
           height: 52,
           padding: const EdgeInsets.symmetric(vertical: 12),
           decoration: BoxDecoration(
-            color: isSelected ? const Color(0xffE8F2EC) : Colors.white,
-            border: Border.all(
-              color: isSelected ? const Color(0xffE8F2EC) : const Color(0xffEDEDED),
-            ),
+            color: isSelected ? App_theme.primary.withOpacity(0.2) : Colors.white,
             borderRadius: BorderRadius.circular(8),
           ),
           child: Row(
@@ -40,11 +36,16 @@ class SelectDeliveryCard extends StatelessWidget {
                 iconPath,
                 width: 24,
                 height: 24,
+
               ),
               const SizedBox(width: 8),
               Text(
                 label,
-                style: const TextStyle(color: App_theme.black, fontWeight: FontWeight.w500, fontSize: 14),
+                style: TextStyle(
+                  color: isSelected ? App_theme.primary : App_theme.black,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 14,
+                ),
               ),
             ],
           ),
@@ -53,4 +54,3 @@ class SelectDeliveryCard extends StatelessWidget {
     );
   }
 }
-

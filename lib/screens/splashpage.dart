@@ -61,6 +61,24 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       body: Stack(
         children: [
+          Positioned(
+            right: 0,
+            left: MediaQuery.of(context).size.width / 2 - 50,
+            bottom: 320,
+            child: const Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "Cation",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 30,
+                    color: App_theme.primary,
+                  ),
+                ),
+              ],
+            ),
+          ),
           Center(
             child: AnimatedContainer(
               width: width,
@@ -74,24 +92,20 @@ class _SplashPageState extends State<SplashPage> {
               ),
             ),
           ),
-          Positioned(
-            right: 0,
-            left: MediaQuery.of(context).size.width / 2 - 50,
-            bottom: 40,
-            child: const Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  "Richdiets 2023",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 14,
-                    color: App_theme.primary,
-                  ),
+          Center(
+            child: AnimatedContainer(
+              width: width,
+              height: height,
+              duration: const Duration(seconds: 1),
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  fit: BoxFit.contain,
+                  image: AssetImage("assets/images/Frame2.png"),
                 ),
-              ],
+              ),
             ),
           ),
+
         ],
       ),
     );

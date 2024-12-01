@@ -21,16 +21,16 @@ class CartBloc extends Bloc<AppEvent, AppState> {
         return [
           MealModel(
             id: 1,
-            name: 'Pizza Ransh extra cheese',
-            price: 1600,
-            image: 'assets/images/meal_placeholder.png',
+            name: 'Cat Food',
+            price: 300,
+            image: 'assets/images/Catfood.png',
             quantity: 1,
           ),
           MealModel(
-            id: 2,
-            name: 'Burger BBQ',
-            price: 1200,
-            image: 'assets/images/meal_placeholder.png',
+            id: 1,
+            name: 'Cat Toy',
+            price: 230,
+            image: 'assets/images/FishTank.png',
             quantity: 1,
           ),
         ];

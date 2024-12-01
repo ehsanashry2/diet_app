@@ -24,7 +24,7 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              AuthCustomApppBar(),
+              const AuthCustomApppBar(),
               Padding(
                 padding: const EdgeInsets.all(24),
                 child: Column(
@@ -33,7 +33,7 @@ class LoginScreen extends StatelessWidget {
                     const SizedBox(height: 10),
                     const Text(
                       'Welcome Back!',
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:App_theme.black),
+                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:App_theme.primary),
                     ),
                     const SizedBox(height: 4),
                     const Text(
@@ -83,13 +83,13 @@ class LoginScreen extends StatelessWidget {
                           if (state is SuccessState) {
                             print('email: ${emailController.text}');
                             print('Password: ${passwordController.text}');
-                            WidgetsBinding.instance.addPostFrameCallback((_) {
+                            {
                               Navigator.pushAndRemoveUntil(
                                 context,
-                                MaterialPageRoute(builder: (context) => BottomBarNavigator()),
+                                MaterialPageRoute(builder: (context) => const BottomBarNavigator()),
                                     (route) => false,
                               );
-                            });
+                            }
                           }
                           if (state is FailureState) {
                             WidgetsBinding.instance.addPostFrameCallback((_) {

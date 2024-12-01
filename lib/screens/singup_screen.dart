@@ -139,7 +139,6 @@ class _SingupScreenState extends State<SingupScreen> {
                             );
                           }
                           return ElevatedButton(
-
                             onPressed: () {
                               if (!_isAccepted) {
                                 _showSnackBar("Please accept the terms and conditions.");
@@ -157,8 +156,6 @@ class _SingupScreenState extends State<SingupScreen> {
                                     ),
                                   );
                                 }
-
-
                               }
                             },
                             style: ElevatedButton.styleFrom(

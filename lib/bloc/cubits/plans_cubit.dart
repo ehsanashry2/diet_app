@@ -15,10 +15,10 @@ class PlansCubit extends Cubit<PlansState> {
   Future<List<PlanModel>> _requestPlansAPI()async{
     await Future.delayed(Duration(seconds: 2));
     return [
-      PlanModel(title: 'Diet Plan', description: 'Chicken wings, Vegetables and Fru..',price:180,imageUrl: 'plans.png'),
-      PlanModel(title: 'Gym Plan', description: 'Chicken wings, Vegetables and Fru..',price:160, imageUrl: 'food2.png'),
-      PlanModel(title: 'Gym Plan', description: 'Chicken wings, Vegetables and Fru..',price:190, imageUrl: 'plans.png'),
-      PlanModel(title: 'Gym Plan', description: 'Chicken wings, Vegetables and Fru..',price:170, imageUrl: 'food2.png'),
+      PlanModel(title: 'Cat Food', description: ' Adult Tuna Flavour is a delicious comp..',price:180,imageUrl: 'Catfood.png'),
+      PlanModel(title: 'Cat Toy', description: 'Generic Cute Cat Toys Funny Interactiv..',price:160, imageUrl: 'cats toy.png'),
+      PlanModel(title: 'Fish Tank', description: 'JumblPets Starter Fish Aquarium Kit, C..',price:190, imageUrl: 'FishTank.png'),
+      PlanModel(title: 'Bird Cage', description: 'Metal Bird Cage',price:170, imageUrl: 'Bridcage.png'),
 
     ];
   }

@@ -9,25 +9,24 @@ class AuthCustomApppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          width: MediaQuery.of(context).size.width,
-          height: 280,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/images/login.png'),
-              fit: BoxFit.cover,
+        Padding(
+          padding: const EdgeInsets.only(top:50),
+          child: Container(
+            width: double.infinity,
+            height: 246,
+            child: Align(
+              alignment: Alignment.center,
+              child: Container(
+                width: 238,
+                height: 230,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/Frame2.png'),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
             ),
-          ),
-        ),
-
-        Positioned(
-          top: 57,
-          left: 0,
-          right: 0,
-          child: SizedBox(
-            width: 75,
-            height: 90,
-            child: Image.asset('assets/images/Frame.png'),
           ),
         ),
         if (icon != null)

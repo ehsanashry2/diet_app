@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/bloc_discount/discount_bloc.dart';
 import '../bloc/bloc_discount/discount_events.dart';
 import '../bloc/bloc_discount/discount_states.dart';
+import '../widgets/addreesinput.dart';
 import '../widgets/delivery_method_selector.dart';
 
 import '../widgets/order_action_buttom.dart';
@@ -35,15 +36,15 @@ class OrderPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const OrderCartItem(
-                title: 'Pizza Ranch extra cheese',
-                price: '1500 AED',
-                imagePath: 'assets/images/pizza.png',
+                title: 'Cat Food',
+                price: '99 EGP',
+                imagePath: 'assets/images/Catfood.png',
               ),
               const SizedBox(height: 16),
               const OrderCartItem(
                 title: 'Chicken Cacciatore',
-                price: '1500 AED',
-                imagePath: 'assets/images/chicken.png',
+                price: '59 EGP',
+                imagePath: 'assets/images/cats toy.png',
               ),
               const SizedBox(height: 16),
               const Text(
@@ -92,9 +93,12 @@ class OrderPage extends StatelessWidget {
                         const SizedBox(height: 8),
                         const DeliveryMethodSelector(),
                         const SizedBox(height: 16),
-                        const Text('Select a branch', style: TextStyle(fontWeight: FontWeight.bold),),
+                        const Text('Select a governorate', style: TextStyle(fontWeight: FontWeight.bold),),
+                        const SizedBox(height: 16),
+                        const SelectedGovernorate(),
+                        const SizedBox(height: 16),
+                        const AddressInput(),
                         const SizedBox(height: 8),
-                        const SelectedBranch(),
                         const SizedBox(height: 24),
                         const Text('Order Summary', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),
                         const SizedBox(height: 16),
@@ -128,7 +132,7 @@ class OrderPage extends StatelessWidget {
                           children: [
                             OrderActionButton(
                               text: 'Add More Items',
-                              color: App_theme.scondery,
+                              color: App_theme.primary.withOpacity(0.3),
                               onPressed: () {},
                               textColor: App_theme.primary,
                             ),

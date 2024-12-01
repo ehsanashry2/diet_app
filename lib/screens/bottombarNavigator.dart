@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:untitled1/widgets/showalldoctor.dart';
 import '../bloc/bloc_cart/cart_bloc.dart';
 import '../bloc/cubits/plans_cubit.dart';
 import 'cart_screen.dart';
@@ -36,7 +37,7 @@ class _BottomBarNavigatorState extends State<BottomBarNavigator> {
     ),
 
     const ProfilePage(),
-    const OrderPage(),
+    const Viewalldoctor(),
   ];
 
   @override

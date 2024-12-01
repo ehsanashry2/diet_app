@@ -1,8 +1,6 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../bloc/cubits/plans_cubit.dart';
 import '../configuration/theme.dart';
 import '../models/plan_model.dart';
@@ -23,12 +21,10 @@ class Plans extends StatelessWidget {
         ),
         backgroundColor: App_theme.backgroundwhite,
         elevation: 1,
-          actions: [
-            SvgPicture.asset('assets/icons/search.svg', color: App_theme.black, width: 24,),
-            SizedBox(
-              width: 24,
-            ),
-          ]
+        actions: [
+          SvgPicture.asset('assets/icons/search.svg', color: App_theme.black, width: 24,),
+          const SizedBox(width: 16), // تقليل المسافة
+        ],
       ),
       body: BlocBuilder<PlansCubit, PlansState>(
         builder: (context, state) {
@@ -40,14 +36,15 @@ class Plans extends StatelessWidget {
           if (state is PlansLoadedState) {
             List<PlanModel> plans = state.plans;
             return Padding(
-              padding: const EdgeInsets.only(top:40),
+              padding: const EdgeInsets.only(top: 10),
               child: ListView.separated(
                 itemCount: plans.length,
                 itemBuilder: (context, index) {
                   return ListTile(
+                    contentPadding: const EdgeInsets.symmetric(vertical: 4, horizontal: 12), // تقليل المسافة الداخلية
                     leading: Container(
-                      width: 57,
-                      height: 57,
+                      width: 45,
+                      height: 45,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         image: DecorationImage(
@@ -63,24 +60,24 @@ class Plans extends StatelessWidget {
                           'Plan ${plans[index].title}',
                           style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color:  App_theme.black),
                         ),
-                        const SizedBox(height: 4),
+                        const SizedBox(height: 2), // تقليل المسافة بين العناوين
                         Text(
                           'Description: ${plans[index].description}',
-                          style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: App_theme.hinttextcolor),
+                          style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w500, color: App_theme.hinttextcolor),
                         ),
-                        const SizedBox(height: 4),
+                        const SizedBox(height: 2),
                         Text(
                           '${plans[index].price.toStringAsFixed(2)} AED',
-                          style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: App_theme.primary,),
+                          style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: App_theme.primary),
                         ),
                       ],
                     ),
-                    trailing: const Icon(Icons.arrow_forward_ios, size: 24, color:  App_theme.black),
+                    trailing: const Icon(Icons.arrow_forward_ios, size: 18, color:  App_theme.black),
                   );
                 },
                 separatorBuilder: (context, index) {
                   return const Padding(
-                    padding: EdgeInsets.only(top: 19, bottom: 16,left: 24,right: 24),
+                    padding: EdgeInsets.symmetric(vertical: 6, horizontal: 20),
                     child: Divider(),
                   );
                 },
@@ -104,4 +101,3 @@ class Plans extends StatelessWidget {
     );
   }
 }
-

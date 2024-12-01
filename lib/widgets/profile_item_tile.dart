@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../models/profile_model.dart';
+
 class ProfileDesign extends StatelessWidget {
   final List<ProfileItem> items;
+
   const ProfileDesign({super.key, required this.items});
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -22,13 +25,14 @@ class ProfileDesign extends StatelessWidget {
                         item.icon,
                         width: 24,
                         height: 24,
+                        color: Theme.of(context).primaryColor,
                       ),
                       const SizedBox(width: 16),
                       Text(
                         item.text,
-                        style:  TextStyle(
+                        style: TextStyle(
                           fontSize: 16,
-                          color: (item.text == 'Logout') ? Colors.red : Colors.black,
+                          color: (item.text == 'Logout') ? Theme.of(context).primaryColor.withOpacity(0.50) : Colors.black,
                         ),
                       ),
                     ],

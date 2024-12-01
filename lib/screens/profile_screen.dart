@@ -10,7 +10,6 @@ import '../widgets/profile_wallet.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider<UserDataCubit>(
@@ -19,6 +18,7 @@ class ProfilePage extends StatelessWidget {
         backgroundColor: App_theme.backgroundwhite,
         appBar: AppBar(
           centerTitle: false,
+
           title: const Text(
             'Profile',
             style: TextStyle(
@@ -27,7 +27,7 @@ class ProfilePage extends StatelessWidget {
               color: Colors.black,
             ),
           ),
-          backgroundColor: App_theme.backgroundwhite,
+          backgroundColor:Colors.transparent,
           elevation: 0,
         ),
         body: BlocBuilder<UserDataCubit, UserDataState>(
@@ -45,7 +45,6 @@ class ProfilePage extends StatelessWidget {
                       const SizedBox(height: 24),
                       ProfileHeader(username: state.username, email: state.email),
                       const SizedBox(height: 24),
-                      const ProfileWallet(),
                       const SizedBox(height: 32),
                       ProfileDesign(items: items),
                     ],
